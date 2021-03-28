@@ -1,0 +1,88 @@
+---
+title: Talk slides template
+tags: Templates, Talk
+description: View the slide with "Slide Mode".
+---
+
+# 專題主題擬定討論(Fun心通勤)
+
+<!-- Put the link to this slide here so people can follow -->
+
+---
+
+### 通勤上班族或學生族總是需要面對
+##### 1.未知的交通狀況
+![](https://image.peoplenews.tw/news/4a281898-76d9-4b29-b045-75ebb2ffbce7.jpg)
+
+---
+
+##### 2.未知的時刻誤點資訊
+![](https://cdn2.ettoday.net/images/682/d682058.jpg)
+
+---
+
+##### 3.沒有一個能夠輕易一次掌握資訊的方式
+![](https://pic.qqtn.com/up/2017-8/201708231453284429624.png)
+
+---
+
+### - 若我們避開MAP上的地雷路段
+### - 避開列車空窗時段
+### - 避開列車誤點造成車廂過度壅擠的時段
+
+## 我們是不是能夠擁有更愉快的通勤時間?
+
+---
+
+## 怎麼做?
+
+- ### 分析目前google map你所前往的地點目前所需時間是否為平均值
+![](https://i0.wp.com/ingtt.com/wp-content/uploads/2019/09/google-map-traffic-colors-01.png?resize=425%2C756&ssl=1)
+
+---
+
+- ### 取得目前交通運輸工具的到達時間或時刻 
+![](https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/38/d7/55/38d75527-4b7d-3aa7-7cbf-7cd4a68987eb/mzl.kxahlndu.png/750x750bb.jpeg)
+![](https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/25/e3/56/25e356c6-0130-3bcd-088a-3872722b51d8/mzl.kbcpjaua.png/392x696bb.png)
+
+---
+
+- ### 估算什麼時候出門及規劃路線
+![](https://pic.pimg.tw/isvincent/1502103332-2138571884.png)
+
+---
+
+### 示意圖
+
+
+```graphviz
+digraph {
+  compound=true
+  rankdir=RL
+
+  graph [ fontname="Source Sans Pro", fontsize=20 ];
+  node [ fontname="Source Sans Pro", fontsize=18];
+  edge [ fontname="Source Sans Pro", fontsize=12 ];
+
+
+  subgraph core {
+    c [label="深度學習"] [shape=box]
+  }
+  
+  c -> sync [ltail=session lhead=session]
+
+  subgraph cluster1 {
+     concentrate=true
+    a [label="路況分析"] [shape=box]
+    b [label="時刻表統整"] [shape=box]
+    sync [label="APP" shape=plaintext ]
+    b -> sync  [dir="both"]
+    sync -> a [dir="both"]
+    label="Fun心通勤"
+  }
+}
+```
+
+---
+
+# Thanks For Listening! :mushroom: 
