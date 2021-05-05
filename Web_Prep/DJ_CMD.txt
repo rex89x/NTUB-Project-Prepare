@@ -7,6 +7,19 @@ django-admin startproject 名稱
 
 python 檔名 runserver
 
+在根目錄urls.py檔的from django.urls import path 後面多增加 include 可以配置URL
+urlpatterns 加入 ( path('', include("quotes.urls")), )
+
+在新建project 中 新增urls.py
+內容
+from django.urls import path
+from . import views
+urlpatterns = [
+	path('about.html', views.about, name = "about"),
+]
+再回根project 的 urls 裡面的 urlpatterns 裡面新增
+	path('', include("quotes.urls")),
+
 python 檔名 startapp 專案名稱
 新增專案在 INSTALLED_APPS 後加入專案名稱(註冊)
 在post的 models.py 新增你的內容
