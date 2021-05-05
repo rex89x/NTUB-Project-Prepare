@@ -1,0 +1,96 @@
+教學網站
+https://www.learncodewithmike.com/2020/04/django-heroku.html
+https://developer.mozilla.org/zh-TW/docs/Learn/Server-side/Django/skeleton_website
+https://www.chunhongweb.com/django-tutorial-ep-one/
+
+
+python 檔名 runserver
+
+python 檔名 startapp 專案名稱
+新增專案在 INSTALLED_APPS 後加入專案名稱(註冊)
+在post的 models.py 新增你的內容
+python manage.py makemigrations post
+python manage.py migrate
+在post的 admin.py 加入 from .models import Post
+修改post 的 models.py 新增呈現內容
+views裡面修改要推播之內容設定
+新增template資料夾後新增你需要的html檔案
+在local的 urls.py 新增你的套件及在urlpatterns 內新增你的path
+修改settings.py的template dir -> [os.path.join(BASE_DIR, 'templates').replace('\\', '/')]
+
+
+python manage.py migrate
+
+python manage.py createsuperuser
+
+
+
+
+heroku建立虛擬環境
+python -m venv 名稱
+進入虛擬環境
+虛擬環境名稱\Scripts\activate
+
+https://toolbelt.heroku.com/download/windows	下載HEROKU
+
+安裝點選Custom Installation
+去除git&SSH
+
+heroku login 指令後登入 HEROKU帳號密碼
+
+
+
+安裝Heroku PYTHON套件
+pip install dj-database-url gunicorn dj-static
+pip install gunicorn
+
+新增以下內容至新建TXT檔案 requirements.txt
+Django==1.8.6
+appnope==0.1.0
+decorator==4.0.4
+dj-database-url==0.3.0
+dj-static==0.0.6
+gnureadline==6.3.3
+gunicorn==19.3.0
+ipython==4.0.0
+ipython-genutils==0.1.0
+path.py==8.1.2
+pexpect==4.0.1
+pickleshare==0.5
+ptyprocess==0.5
+simplegeneric==0.8.1
+static3==0.6.1
+traitlets==4.0.0
+psycopg2==2.6.1
+
+新增一個Procfile.txt在根目錄
+內容輸入:web: gunicorn urexpenses.wsgi
+
+settings.py檔案 最下面新增指令
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+傳換至靜態檔案並收集至static資料夾中
+python manage.py collectstatic
+
+在settings.py 的 MIDDLEWARE裡增加一行
+ 'whitenoise.middleware.WhiteNoiseMiddleware',
+
+heroku login
+
+heroku create 名稱
+
+在settings.py 將 ALLOWED_HOSTS 改成 create 完後得到的網址
+
+開啟git CLI
+git init
+git add .
+git commit -m [Message]
+
+heroku git:remote -a 你的專案名稱
+git push heroku master
+heroku ps:scale web=1
+heroku open
+
+#https://www.learncodewithmike.com/2020/05/django-postgresql.html
+連結PostgreSQL
+pip install psycopg2
