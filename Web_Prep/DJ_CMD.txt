@@ -3,6 +3,7 @@ https://www.learncodewithmike.com/2020/04/django-heroku.html
 https://developer.mozilla.org/zh-TW/docs/Learn/Server-side/Django/skeleton_website
 https://www.chunhongweb.com/django-tutorial-ep-one/
 
+django-admin startproject 名稱
 
 python 檔名 runserver
 
