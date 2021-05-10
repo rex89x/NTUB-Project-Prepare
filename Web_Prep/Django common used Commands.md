@@ -45,7 +45,7 @@ def [name](request):
 - admin.site.register(NewTable) EX(admin.site.register(Post, PostAdmin))
 - 
 
-At admin sqlite create schema
+At admin SQLite create schema
 ---
 - {models.py}
     class Post(models.Model):
