@@ -1,1 +1,1 @@
-#RNN, LSTM practice and prepare folder
+# RNN, LSTM practice and prepare folder
