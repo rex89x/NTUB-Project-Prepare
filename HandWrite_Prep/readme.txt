@@ -1,1 +1,0 @@
-E.Sun AI HandWrite Competition Project Prepare
